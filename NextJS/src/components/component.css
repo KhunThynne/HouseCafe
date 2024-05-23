@@ -1,0 +1,85 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "tailwindcss/variants";
+
+.component {
+
+    color: rgb(17, 17, 216);
+}
+
+
+
+/* กำหนด animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+.CartLayout {
+
+    transform: translateX(100%);
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+
+}
+
+.CartLayout.show {
+    animation-name: slideIn;
+
+}
+
+.CartLayout.hide {
+    animation-name: slideOut;
+    /* opacity: 0; */
+}
+
+
+@layer components {
+    .CartLayout .scrollable-container {
+        direction: rtl;
+        /* กำหนดให้สไลด์ไปทางซ้าย */
+    }
+
+    .CartLayout ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    .CartLayout ::-webkit-scrollbar-track {
+        background: theme('colors.secondary.DEFAULT');
+    }
+
+    /* Handle */
+    .CartLayout ::-webkit-scrollbar-thumb {
+        background: theme('colors.primary.evening');
+    }
+
+    /* Handle on hover */
+    .CartLayout::-webkit-scrollbar-thumb:hover {
+        background: theme('colors.primary.morning');
+    }
+
+    .btn {
+        @apply hover:opacity-90;
+        user-select: none;
+    }
+}
