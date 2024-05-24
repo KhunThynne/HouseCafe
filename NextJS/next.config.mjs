@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
     env: {
         customKey: 'my-value',
+      
     },
+
     async redirects() {
         return [
             {
@@ -11,7 +12,7 @@ const nextConfig = {
                 destination: '/home',
                 permanent: true,
             },
-     
+
         ]
     },
     // basePath: ""
