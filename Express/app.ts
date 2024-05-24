@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express'
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 // require('dotenv').config({ path: '.env.production' });
 
 var logger = require('morgan');

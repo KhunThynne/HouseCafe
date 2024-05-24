@@ -32,7 +32,7 @@ function onError(error: NodeJS.ErrnoException) {
       break;
     case 'EADDRINUSE':
       console.error(bind + ' is already in use');
-      const new_port = typeof Port === 'number' ? Port + 1 : Port
+
 
       process.exit(1);
       break;
@@ -53,7 +53,7 @@ function onListening() {
 
 
 }
-let Port = normalizePort(process.env.PORT || '3002');
+let Port = normalizePort(process.env.EXPRESS_PORT || '3015');
 app.set('Port', Port);
 server.listen(Port);
 server.on('error', onError);
