@@ -1,3 +1,4 @@
+
 "use client"
 import { useEffect, useState } from "react";
 
@@ -23,8 +24,8 @@ async function getData() {
 }
 
 
+export default function ExpressPage() {
 
-export default function DashboardPage() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -48,8 +49,8 @@ export default function DashboardPage() {
     // }
 
     return (
-        <div className="flex justify-center">
-            <span>DashboardPage</span>
+        <div className="flex justify-center flex-col items-center my-20">
+            <div>ExpressTEST</div>
             <div>
                 {/* Render the data here */}
                 {data && JSON.stringify(data)}

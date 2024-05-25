@@ -128,6 +128,9 @@
       color: wheat;
     }
   } */
+  .Not-Found {
+    @apply flex items-center  h-screen
+  }
 
   .m-screen {
     top: 50%;

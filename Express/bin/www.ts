@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import 'module-alias/register';
+
 
 const app = require('../app');
 const http = require('http');
