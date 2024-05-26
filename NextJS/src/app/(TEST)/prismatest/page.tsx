@@ -5,9 +5,6 @@ async function getUsers(): Promise<users | null> {
     return await prisma.users.findUnique({ where: { id: 1 } });
 }
 
-
-
-
 export default async function PrismaPage() {
     let usersData: users | null;
     try {

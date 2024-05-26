@@ -1,0 +1,196 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "House_cafe",
+    "collectionId": "0df0c942-2b29-441d-a681-cc33605aa932",
+    "dateExported": "2024-05-25T20:07:43.384Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "e41e8196-27cf-4aee-80a0-ec5925a6aa86",
+            "name": "Mock",
+            "containerId": "",
+            "created": "2024-05-22T19:09:19.222Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "c6d9379e-8abf-42d3-a292-8d7091907eca",
+            "name": "DATABASE",
+            "containerId": "",
+            "created": "2024-05-23T01:50:59.546Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "0cd77701-0931-42a2-9467-34f9312d11c4",
+            "name": "PRISMA",
+            "containerId": "",
+            "created": "2024-05-23T19:57:36.125Z",
+            "sortNum": 60000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "85745c42-b3fc-4ad8-aeaf-94cb4466e6fa",
+            "colId": "0df0c942-2b29-441d-a681-cc33605aa932",
+            "containerId": "c6d9379e-8abf-42d3-a292-8d7091907eca",
+            "name": "insert",
+            "url": "http://localhost:3001/house_cafe/insert/products",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-23T01:36:30.151Z",
+            "modified": "2024-05-23T14:15:03.757Z",
+            "headers": [
+                {
+                    "name": "Secret-Key",
+                    "value": "15151515"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"data\": {\n    \"name\": \"'x'\",\n    \"description\": \"'x'\",\n    \"price\": 100,\n    \"stock\": 20\n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c47f6ff8-be1e-449b-9e3e-3e07da32c9cd",
+            "colId": "0df0c942-2b29-441d-a681-cc33605aa932",
+            "containerId": "c6d9379e-8abf-42d3-a292-8d7091907eca",
+            "name": "select",
+            "url": "http://localhost:3001/house_cafe/products/?id=8",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-05-22T19:10:28.357Z",
+            "modified": "2024-05-23T15:50:18.320Z",
+            "headers": [
+                {
+                    "name": "Secret-Key",
+                    "value": "15151515"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "text/plain",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "8",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"stock\": 2,\n  \"name\": \"'Food'\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "2bead2b2-9868-425b-8ae9-4c9be4fa9d7f",
+            "colId": "0df0c942-2b29-441d-a681-cc33605aa932",
+            "containerId": "c6d9379e-8abf-42d3-a292-8d7091907eca",
+            "name": "delete",
+            "url": "http://localhost:3001/house_cafe/products?id=1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-23T14:11:06.251Z",
+            "modified": "2024-05-23T14:43:47.759Z",
+            "headers": [
+                {
+                    "name": "Secret-Key",
+                    "value": "15151515"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\"test\":\"sdsd\"}",
+                "form": []
+            }
+        },
+        {
+            "_id": "91fbee40-97c4-42ed-9ff3-556e5ad42e42",
+            "colId": "0df0c942-2b29-441d-a681-cc33605aa932",
+            "containerId": "",
+            "name": "test",
+            "url": "http://localhost:3001/house_cafe/select",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-05-22T21:29:50.541Z",
+            "modified": "2024-05-23T02:09:59.958Z",
+            "headers": [
+                {
+                    "name": "Secret-Key",
+                    "value": "15151515"
+                }
+            ]
+        },
+        {
+            "_id": "2aeab8d1-7b93-4262-aaa6-71920a4980e7",
+            "colId": "0df0c942-2b29-441d-a681-cc33605aa932",
+            "containerId": "e41e8196-27cf-4aee-80a0-ec5925a6aa86",
+            "name": "select",
+            "url": "http://localhost:3001/mork/select?size=8000",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-05-23T01:51:13.391Z",
+            "modified": "2024-05-23T02:30:20.157Z",
+            "headers": [
+                {
+                    "name": "Secret-key",
+                    "value": "15151515"
+                }
+            ],
+            "params": [
+                {
+                    "name": "size",
+                    "value": "8000",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "82ed1235-a18a-4403-8a94-73dc15eee014",
+            "colId": "0df0c942-2b29-441d-a681-cc33605aa932",
+            "containerId": "c6d9379e-8abf-42d3-a292-8d7091907eca",
+            "name": "update",
+            "url": "",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-05-23T14:44:45.470Z",
+            "modified": "2024-05-23T14:44:45.470Z",
+            "headers": []
+        },
+        {
+            "_id": "28cd6aae-eba8-49ac-9489-c8fa7fba2368",
+            "colId": "0df0c942-2b29-441d-a681-cc33605aa932",
+            "containerId": "0cd77701-0931-42a2-9467-34f9312d11c4",
+            "name": "userfind",
+            "url": "http://localhost:3001/products",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-05-23T19:57:52.421Z",
+            "modified": "2024-05-25T19:22:34.322Z",
+            "headers": [
+                {
+                    "name": "Secret-Key",
+                    "value": "15151515"
+                }
+            ]
+        }
+    ],
+    "ref": "rUKRKC_wTGMzV6EdeofIUhIjTbcbqB2SqjPgU-h-EUWlmpNMTLRGQ5kZqnEE83LovmFWVCwc8yKbdsCeeulfzA"
+}

@@ -16,8 +16,15 @@ export default function CartLayOut({ children }: CartLayOutType) {
 
     return (
         <div>
-            <div className="cursor-pointer p-2 px-5  z-30   hover:text-gray-400 btn" onClick={() => { setState(state === "show" ? "hide" : "show") }}>
+
+            <div className="relative cursor-pointer p-2 px-5   opacity-80  hover:opacity-100 btn" onClick={() => { setState(state === "show" ? "hide" : "show") }}>
+
                 <CiShoppingBasket className="text-2xl" />
+                <div className="absolute flex justify-center px-1  w-full  left-0">
+                    <sub className="text-[8px] border p-[5.8px] rounded  bg-primary w-[25px] text-center overflow-hidden text-ellipsis nowrap"> 10 </sub>
+
+
+                </div>
             </div>
             <div className={`${state} fixed  top-0 right-0 border rounded bg-white w-[100%] md:w-[500px] h-[100%] CartLayout `}>
 

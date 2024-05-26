@@ -22,10 +22,12 @@ const config: Config = withMT({
         serif: ['Merriweather', 'serif'],
       },
       screens: {
-        'xs': { "max": "260px" },
+        'mi': { "max": "260px" },
+
         'mobile': { "min": "767px" },
         'tablet': { "min": "1023px" },
         'desktop': { "max": "1024px" },
+        'xs': { "max": "400px" },
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',

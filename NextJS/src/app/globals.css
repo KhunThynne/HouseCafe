@@ -82,7 +82,8 @@
 
 
   body {
-    @apply text-[​#535353] bg-gray-100
+    @apply text-[​#535353] bg-gray-100  border-primary min-h-screen;
+   
   }
 
   .text-balance {
@@ -102,7 +103,7 @@
   }
 
   /* special screen   screen < xs = True */
-  @media screen(xs) {
+  @media screen(mi) {
     body * {
       font-size: calc(8vw);
     }
@@ -129,7 +130,7 @@
     }
   } */
   .Not-Found {
-    @apply flex items-center  h-screen
+    @apply flex items-center h-screen
   }
 
   .m-screen {
