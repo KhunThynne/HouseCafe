@@ -8,6 +8,7 @@
     "dev": "ts-node-dev ./bin/www.ts",
     "start": "tsc && set NODE_ENV=production && node dist/bin/www.js",
     "lint": "eslint . --ext .ts",
+
     "build": "tsc"
   },
   "keywords": [],
@@ -23,6 +24,7 @@
     "express": "^5.0.0-beta.3",
     "faker": "^6.6.6",
     "http": "^0.0.1-security",
+    "json5": "^2.2.3",
     "morgan": "^1.10.0",
     "mysql": "github:mysqljs/mysql",
     "mysql2": "^3.9.7",

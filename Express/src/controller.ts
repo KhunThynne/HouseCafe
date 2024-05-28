@@ -10,7 +10,7 @@ controller.use((req, res, next) => {
     res.sendStatus(401)
 })
 
-controller.use(require('./router'))
+controller.use("/prisma",require('./router/prisma'))
 
 
 module.exports = controller

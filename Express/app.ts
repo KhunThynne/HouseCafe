@@ -56,5 +56,6 @@ app.get('/', (req: Request, res: Response) => {
 
 
 
+
 app.use(require('./bin/midleware/error'));
 module.exports = app;

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  web-app:
+    build: .
+    ports:
+      - "3001:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: "postgresql://root:password@postgres:5432/house_cafe"
+    command: >
+      sh -c "
+      cd /usr/src/app
+      npx prisma migrate deploy &&
+      npx prisma generate &&
+      cd /usr/src/app/Express &&
+      npm start
+      "
+
+  postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: house_cafe
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./prisma/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d house_cafe"]
+      interval: 6s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres-data:

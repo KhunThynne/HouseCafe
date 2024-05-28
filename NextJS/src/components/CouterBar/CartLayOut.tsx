@@ -7,11 +7,12 @@ import { CiShoppingBasket } from "react-icons/ci";
 // import { eventHandlers } from "./script"
 
 interface CartLayOutType {
-    children?: ReactNode
+    children?: ReactNode,
+    Count?: String,
 }
 
 
-export default function CartLayOut({ children }: CartLayOutType) {
+export default function CartLayOut({ children, Count }: CartLayOutType) {
     const [state, setState] = useState("")
 
     return (
@@ -21,8 +22,8 @@ export default function CartLayOut({ children }: CartLayOutType) {
 
                 <CiShoppingBasket className="text-2xl" />
                 <div className="absolute flex justify-center px-1  w-full  left-0">
-                    <sub className="text-[8px] border p-[5.8px] rounded  bg-primary w-[25px] text-center overflow-hidden text-ellipsis nowrap"> 10 </sub>
-
+                    {Count ? <sub className="text-[8px] border p-[5.8px] rounded  bg-primary w-[25px] text-center overflow-hidden text-ellipsis nowrap"> {Count} </sub> : <sub>...</sub>
+                    }
 
                 </div>
             </div>

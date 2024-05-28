@@ -4,5 +4,10 @@
   },
   "dependencies": {
     "@prisma/client": "^5.14.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "migrate": "prisma migrate dev --name init",
+    "generate": "prisma generate"
   }
 }
