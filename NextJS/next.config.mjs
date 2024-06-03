@@ -3,9 +3,9 @@
 
 
 const nextConfig = {
-    experimental: {
-        reactCompiler: true,
-    },
+    // experimental: {
+    //     reactCompiler: true,
+    // },
 
     env: {
         customKey: 'my-value',
