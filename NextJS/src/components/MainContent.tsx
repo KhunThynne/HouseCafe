@@ -8,6 +8,8 @@ interface MainContentProps {
 
 const MainContent: React.FunctionComponent<MainContentProps> = ({ children, className }) => {
     // Component logic
+
+    
     return <main className={`${className} h-full `}>
 
         {children}

@@ -5,6 +5,6 @@
 import { createContext } from "react";
 
 const webContext = createContext<any>({});
+const alertContext = createContext<any>({});
 
-
-export default webContext;
+export { webContext, alertContext };

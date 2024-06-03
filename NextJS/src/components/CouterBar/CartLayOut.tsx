@@ -1,9 +1,10 @@
 
 
 
-import { ReactNode, useState } from "react"
+import { ReactNode, useContext, useEffect, useState } from "react"
 import CardProduct from "./CartProduct";
 import { CiShoppingBasket } from "react-icons/ci";
+import { webContext } from "@/lib/context";
 // import { eventHandlers } from "./script"
 
 interface CartLayOutType {
@@ -14,17 +15,37 @@ interface CartLayOutType {
 
 export default function CartLayOut({ children, Count }: CartLayOutType) {
     const [state, setState] = useState("")
+    const [logLoad, setLogLoad] = useState<string>("...")
+    const { addCart} = useContext(webContext)
 
+    useEffect(() => {
+
+        const load_set = setTimeout(() => {
+            setLogLoad("null")
+        }, (5 * 1000))
+
+
+        return (() => {
+            // 
+
+            clearTimeout(load_set)
+        })
+    }, [
+        addCart
+    ])
     return (
         <div>
 
-            <div className="relative cursor-pointer p-2 px-5   opacity-80  hover:opacity-100 btn" onClick={() => { setState(state === "show" ? "hide" : "show") }}>
+            <div className=" relative cursor-pointer p-2  px-5   opacity-80  hover:opacity-100 btn bag" onClick={() => { setState(state === "show" ? "hide" : "show") }}>
 
-                <CiShoppingBasket className="text-2xl" />
-                <div className="absolute flex justify-center px-1  w-full  left-0">
-                    {Count ? <sub className="text-[8px] border p-[5.8px] rounded  bg-primary w-[25px] text-center overflow-hidden text-ellipsis nowrap"> {Count} </sub> : <sub>...</sub>
-                    }
-
+                <div className="">
+                    <CiShoppingBasket className={`text-2xl ${addCart ? "add" : ""}`} />
+                    <div className="absolute flex justify-center px-1  w-full  left-0 ">
+                        <div className={`fixed top-1  text-xs ${addCart ? "item-add " : "hidden"}  `}> 0</div>
+                        <sub className={` ${addCart ? "add" : ""} text-[8px] border p-[5.8px] rounded   w-[25px] text-center overflow-hidden  nowrap ${Count ? "text-ellipsis bg-primary" : "bg-danger"}`}>
+                            {Count ? Count : logLoad}
+                        </sub>
+                    </div>
                 </div>
             </div>
             <div className={`${state} fixed  top-0 right-0 border rounded bg-white w-[100%] md:w-[500px] h-[100%] CartLayout `}>

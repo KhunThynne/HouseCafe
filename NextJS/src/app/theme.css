@@ -34,9 +34,11 @@
 
     .bg-primary,
     .bg-danger,
+    .bg-secondary,
     .bg-warning {
         @apply !text-white
     }
+
 
 
 }

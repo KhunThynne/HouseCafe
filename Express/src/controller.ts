@@ -3,7 +3,7 @@ import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'e
 
 
 const controller = express.Router()
-console.log(process.env.SQL_USER)
+
 
 controller.use((req, res, next) => {
     if (req.headers['secret-key'] === process.env.SECRET_KEY) return next()

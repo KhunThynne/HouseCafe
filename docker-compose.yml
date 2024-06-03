@@ -3,6 +3,7 @@ version: '3.8'
 services:
   web-app:
     build: .
+    image: thynne/backend:latest
     ports:
       - "3001:3000"
     depends_on:
@@ -30,7 +31,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
       - ./prisma/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U user -d house_cafe"]
+      test: ["CMD-SHELL", "pg_isready  -d house_cafe"]
       interval: 6s
       timeout: 5s
       retries: 5

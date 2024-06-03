@@ -3,7 +3,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import CartLayOut from "./CouterBar/CartLayOut";
-import { getItem } from "@/lib/primamethod";
+import { getItem } from "@/lib/express_prisma";
 
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
 
 
     return (
-        <div className="sticky  top-0  bg-white shadow z-20 " style={{ position: "-webkit-sticky" }}>
+        <div className="sticky h-full  top-0  bg-white shadow z-20 " style={{ position: "-webkit-sticky" }}>
             <nav className=" relative flex justify-between items-center  container mx-auto   px-3  h-[80px]">
                 <div>Manu</div>
              

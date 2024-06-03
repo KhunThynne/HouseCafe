@@ -7,22 +7,13 @@ const JSON5 = require('json5');
 const router = express.Router();
 
 
-router.get("/", async (req, res, next) => {
-
-    const Tet = await prisma.products.findMany()
-    res.send(Tet)
-})
 
 
-// prisma.cart_items.findUnique
-router.get('/:model/:method', async (req, res) => {
-    ConnectPrisma(req, res)
 
+router.all('/:model/:method', async (req, res) => {
+    ConnectPrisma(req, res);
 });
 
-router.post('/:model/:method', async (req, res) => {
-    ConnectPrisma(req, res)
-});
 
 
 async function ConnectPrisma(req: any, res: any) {
@@ -30,13 +21,11 @@ async function ConnectPrisma(req: any, res: any) {
     const Method = req.params.method
 
     var Condition = false
-    console.log(Method)
-    try {
-        Condition = JSON5.parse(req.query.condition);
-        console.log(Condition)
-    } catch (err) {
 
-        console.log("Uncondition")
+    try {
+        Condition = JSON5.parse(req.query.condition || '{}');
+    } catch (err) {
+        console.log("Condition parsing error:", err);
     }
 
     try {
