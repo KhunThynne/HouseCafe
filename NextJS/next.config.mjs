@@ -3,9 +3,13 @@
 
 
 const nextConfig = {
+    experimental: {
+        reactCompiler: true,
+    },
+
     env: {
         customKey: 'my-value',
-      
+
     },
 
     async redirects() {
