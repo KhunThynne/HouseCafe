@@ -40,7 +40,8 @@ const getItem = cache(async (model: string, method: string, query: string = "") 
         headers: {
             'Content-Type': 'application/json',
             'Secret-Key': '15151515'
-        }, next: { revalidate: 3600 }
+        }
+        // }, next: { revalidate: 3600 }
     });
 
     if (!res.ok) {
