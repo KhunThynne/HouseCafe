@@ -9,7 +9,7 @@ import { ReactNode, useRef, useState } from "react"
 interface ProductBoxType {
     children?: ReactNode,
     product: {
-        id: Number,
+        id: string,
         name: String,
         price: String
     }
@@ -30,6 +30,7 @@ export default function ProductBox({ children, product }: ProductBoxType) {
                     <div className="border h-[250px] "> </div>
                     <div className="my-2 text-center">
                         <h3> {product.name} </h3>
+                        <h3> {product.id} </h3>
                         <p> price <span className="text-xs"> {product.price} </span>  </p></div>
                 </div>
             </Link>

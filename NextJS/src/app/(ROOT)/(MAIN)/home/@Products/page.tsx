@@ -31,7 +31,7 @@ export default function ProductPage() {
         async function prismaGet() {
             try {
                 const item = await getItem("products", "findMany")
-
+                console.log(item)
                 setProductsData(item)
 
             } catch (err: any) {
