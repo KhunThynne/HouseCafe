@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "prisma": "^5.14.0"
+    "prisma": "^5.15.0"
   },
   "dependencies": {
-    "@prisma/client": "^5.14.0"
+    "@prisma/client": "^5.15.0"
   },
   "scripts": {
     "lint": "eslint . --ext .ts",
