@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/(TEST)
+/NextJS
+/design
 /.next
 /.pnp
 .pnp.js
@@ -36,6 +39,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/(TEST)
-/NextJS
-/design
