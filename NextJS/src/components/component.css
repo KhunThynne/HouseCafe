@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 @import "tailwindcss/variants";
 @import "./Modals/modalStyle.css";
+
 .component {
 
     color: rgb(17, 17, 216);
@@ -48,11 +49,56 @@
     }
 
     .bag .item-add {
-      
+
         animation: moveDown 0.5s ease-in-out;
         opacity: 0;
     }
+
+
+
+
+    .NavLayOut {
+
+       
+        /* การทำ transition เพื่อสร้างเอฟเฟกต์ slide */
+
+        background-color: transparent;
+      
+        transition: all 0.5s ease;
+       
+    }
+
+    .NavLayOut.up {
+        position: sticky;
+
+        animation: navDown 0.3s ease-in;
+        @apply bg-white  shadow-xl;
+    }
+
+
+
+    .NavLayOut.down {}
+
+
+
 }
+
+
+@keyframes navDown {
+
+    from {
+        top: -10%;
+
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+
+}
+
+
 
 @keyframes moveDown {
     0% {
