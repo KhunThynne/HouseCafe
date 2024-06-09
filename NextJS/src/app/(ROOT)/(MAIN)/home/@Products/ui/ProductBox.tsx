@@ -22,7 +22,7 @@ export default function ProductBox({ children, product }: ProductBoxType) {
     const documentRef = useRef<HTMLDivElement>(null);
     return (
 
-        <div className=" w-full">
+        <div className=" w-full ProductBox">
             <Link href={{
                 pathname: `/product/${product.id}`,
                 //  query: { name: 'test' },

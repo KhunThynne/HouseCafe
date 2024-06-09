@@ -18,12 +18,13 @@ export default function ImageProduct({ height = "100%", width = "100%" }: Image)
     }, [])
     const style = {
         minWidth: width,
-        minHeight: height,
 
     };
 
     return load ? (
-        <div className={` rounded-lg bg-gray-300 shadow-md `} style={style}>
+        <div className={` rounded-lg bg-gray-300 shadow-md  aspect-[1/1.2]`}
+            style={style}
+        >
 
         </div>
 

@@ -42,9 +42,7 @@ export default function ProductPage() {
 
 
         }
-        TestAPI().then(val => { 
-            console.log(val)
-        })
+    
         prismaGet()
 
     }, [])
@@ -72,7 +70,7 @@ export default function ProductPage() {
 
             </div>
             {/*    */}
-            <div className=" Products relative grid  grid-cols-2  md:grid-cols-3 xl:grid-cols-4  gap-[20px] min-h-[55vh]    ">
+            <div className=" Products  relative grid  grid-cols-2  md:grid-cols-3 xl:grid-cols-4  gap-[20px] min-h-[55vh]  p-3   ">
 
 
                 {!error && (

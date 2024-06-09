@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation"
 export default function Abverties() {
 
     const router = useRouter();
-    return <div className=" gap-2  Abverties border p-2 relative">
+    return <div className=" gap-2  Abverties  p-2 relative">
 
         <CarouselSlide>
             <ImageProduct width="200px" />
