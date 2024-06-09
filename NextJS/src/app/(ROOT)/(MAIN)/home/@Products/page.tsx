@@ -6,7 +6,7 @@ import { useState, useEffect, Suspense, useContext } from "react";
 
 import dynamic from "next/dynamic";
 import { webContext } from "@/lib/context";
-import { getItem } from "@/lib/express_prisma";
+import { TestAPI, getItem } from "@/lib/express_prisma";
 
 
 
@@ -25,7 +25,7 @@ export default function ProductPage() {
     const [productsData, setProductsData] = useState<any>([]);
     const [error, setError] = useState<boolean | null>(null);
     const [load, setLoad] = useState<boolean>(false);
-
+    // console.log(API)
     useEffect(() => {
 
         async function prismaGet() {
@@ -42,7 +42,9 @@ export default function ProductPage() {
 
 
         }
-
+        TestAPI().then(val => { 
+            console.log(val)
+        })
         prismaGet()
 
     }, [])

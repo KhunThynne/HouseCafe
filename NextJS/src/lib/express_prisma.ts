@@ -34,7 +34,7 @@ const getItem = cache(async (model: string, method: string, query: string = "") 
     const Host = process.env.BACKEND_API;
 
     const api = `${Host}/prisma/${model}/${method}${query !== "" ? '?condition=' + query : ""}`
-    console.log(api)
+
     const res = await fetch(api, {
         method: 'GET', // ระบุวิธีการ (GET, POST, PUT, DELETE, ฯลฯ)
         headers: {
@@ -45,12 +45,15 @@ const getItem = cache(async (model: string, method: string, query: string = "") 
     })
 
     if (!res.ok) {
-    
+
         throw new Error('Failed to fetch data');
     }
 
     return res.json();
 })
+
+
+
 
 const getItems = async (model: string, method: string, query: string = "") => {
 
@@ -76,7 +79,10 @@ const getItems = async (model: string, method: string, query: string = "") => {
 
 
 
-
+export async function TestAPI() {
+  
+    return process.env.BACKEND_API
+}
 
 
 
