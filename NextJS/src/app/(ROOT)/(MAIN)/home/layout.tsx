@@ -9,15 +9,15 @@ interface HomeLayoutType {
     Abverties: ReactNode
     Products: ReactNode
     Menu: ReactNode
-    Cart: ReactNode
+
 }
 
 
 
 
-export default function HomeLayout({ children, Cart, Abverties, Products, Menu }: HomeLayoutType) {
+export default function HomeLayout({ Abverties, Products, Menu }: HomeLayoutType) {
 
- 
+
     return (
 
         <div className="grid grid-rows-[250px,1fr]  lg:grid-cols-[18%,1fr] gap-5 container mx-auto     h-full"  >

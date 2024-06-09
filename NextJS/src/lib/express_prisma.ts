@@ -31,7 +31,7 @@ const model = {
 
 const getItem = cache(async (model: string, method: string, query: string = "") => {
 
-    const Host = process.env.FRONTEND_API;
+    const Host = process.env.BACKEND_API;
 
     const api = `${Host}/prisma/${model}/${method}${query !== "" ? '?condition=' + query : ""}`
     console.log(api)

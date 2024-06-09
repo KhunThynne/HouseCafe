@@ -28,11 +28,11 @@ export const ModalProvider: React.FC<ModalContextProps> = ({ children }) => {
 
     const openModal = useCallback(() => {
         setIsModalOpen("show");
-    }, [isModalOpen]);
+    }, []);
 
     const closeModal = useCallback(() => {
         setIsModalOpen("hide");
-    }, [isModalOpen]);
+    }, []);
 
     const contextValue: ModalContextValue = {
         isModalOpen,

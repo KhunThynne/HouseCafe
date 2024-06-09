@@ -22,10 +22,7 @@ export default function CartLayOut({ children, Count }: CartLayOutType) {
     const { addCart } = useContext(webContext)
     const { isModalOpen, openModal ,closeModal} = useContextModal()
 
-    const togleModal = useCallback(() => {
 
-        setState(state === "show" ? "hide" : "show")
-    }, [state])
 
 
     useEffect(() => {

@@ -21,27 +21,20 @@ export default function Template({ children }: { children: React.ReactNode }) {
     }, [addCart]);
 
 
-
-
-    const Test = useCallback((item: any) => {
-
-        alert("HI")
-
-    }, [addCart]);
-
     useEffect(() => {
 
-        setTimeout(() => {
-            console.log(addCart)
+        const setEvent = setTimeout(() => {
+
             setCart(false)
         }, 1000)
+
+        return (() => {
+            clearTimeout(setEvent);
+        })
     }, [setAddCart])
 
 
-    useEffect(() => {
 
-        console.log("Hi")
-    }, [])
 
 
 
