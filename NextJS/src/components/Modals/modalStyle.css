@@ -1,0 +1,76 @@
+/* กำหนด animation */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "tailwindcss/variants";
+
+@layer base {
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
+}
+
+@layer components {
+
+    .ModalBlackDrop {
+        /* display: none; */
+
+
+        @apply w-full h-full bg-shadow;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+
+    .ModalBlackDrop.show {
+        /* display: block; */
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .ModalBlackDrop.hide {
+        /* display: none; */
+
+  
+        visibility: hidden;
+
+    }
+
+    .CartLayout {
+
+        transform: translateX(100%);
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        z-index: 2;
+    }
+
+    .CartLayout.show {
+        animation-name: slideIn;
+
+    }
+
+    .CartLayout.hide {
+        animation-name: slideOut;
+        /* opacity: 0; */
+    }
+}

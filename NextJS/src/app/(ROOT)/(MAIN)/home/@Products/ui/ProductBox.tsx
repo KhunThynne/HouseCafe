@@ -1,6 +1,7 @@
 
 
 
+import ImageProduct from "@/components/Products/ImageProduct";
 import Link from "next/link";
 import { ReactNode, useRef, useState } from "react"
 
@@ -21,14 +22,14 @@ export default function ProductBox({ children, product }: ProductBoxType) {
     const documentRef = useRef<HTMLDivElement>(null);
     return (
 
-        <div className="border p-2  bg-white h-[350px] w-full content-center">
+        <div className=" w-full">
             <Link href={{
                 pathname: `/product/${product.id}`,
                 //  query: { name: 'test' },
             }}>
                 <div className="relative">
-                    <div className="border h-[250px] "> </div>
-                    <div className="my-2 text-center">
+                    <ImageProduct height="350px" />
+                    <div className=" h-full  p-3">
                         <h3> {product.name} </h3>
                         <p> price <span className="text-xs"> {product.price} </span>  </p></div>
                 </div>

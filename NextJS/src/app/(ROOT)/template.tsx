@@ -7,6 +7,7 @@ import { Suspense, useCallback, useEffect, useState } from "react";
 import MainContent from "@/components/MainContent";
 import { webContext, alertContext } from "@/lib/context";
 import { time } from "console";
+import { ModalProvider } from "@/components/Modals";
 export default function Template({ children }: { children: React.ReactNode }) {
     const customTheme = "light"
 
@@ -19,7 +20,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
     }, [addCart]);
 
-  
+
 
 
     const Test = useCallback((item: any) => {
@@ -39,7 +40,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
 
- console.log("Hi")
+        console.log("Hi")
     }, [])
 
 
@@ -48,13 +49,15 @@ export default function Template({ children }: { children: React.ReactNode }) {
     return <ThemeProvider value={customTheme}>
 
         <webContext.Provider value={{ data, setDATA, addCart, setAddCart }}>
-            <alertContext.Provider value={{}}>
+            <ModalProvider>
+                <alertContext.Provider value={{}}>
 
 
-                <Navbar />
-                <MainContent className="">{children}</MainContent>
+                    <Navbar />
+                    <MainContent className="">{children}</MainContent>
 
-            </alertContext.Provider>
+                </alertContext.Provider>
+            </ModalProvider>
         </webContext.Provider>
 
     </ThemeProvider>

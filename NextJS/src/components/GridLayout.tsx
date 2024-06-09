@@ -8,7 +8,7 @@ interface GridLayoutProps {
 
 const GridLayout: React.FunctionComponent<GridLayoutProps> = ({ children, className = "" }) => {
     // Component logic
-    return <div className={`grid  grid-rows-[auto,1fr]    ${className}`}>
+    return <div className={`grid  grid-rows-[auto,1fr]    ${className} `}>
         {children}
     </div>;
 }

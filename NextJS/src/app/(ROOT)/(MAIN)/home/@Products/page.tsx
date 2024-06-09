@@ -69,7 +69,8 @@ export default function ProductPage() {
                 </div>
 
             </div>
-            <div className="shadow Products relative p-2 grid xs:grid-cols-1 grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 min-h-[55vh]">
+            {/*    */}
+            <div className=" Products relative grid  grid-cols-2  md:grid-cols-3 xl:grid-cols-4  gap-[20px] min-h-[55vh]    ">
 
 
                 {!error && (

@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "tailwindcss/variants";
-
+@import "./Modals/modalStyle.css";
 .component {
 
     color: rgb(17, 17, 216);
@@ -10,47 +10,6 @@
 
 
 
-/* กำหนด animation */
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-
-    }
-
-    to {
-        transform: translateX(100%);
-    }
-}
-
-
-.CartLayout {
-
-    transform: translateX(100%);
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
-
-}
-
-.CartLayout.show {
-    animation-name: slideIn;
-
-}
-
-.CartLayout.hide {
-    animation-name: slideOut;
-    /* opacity: 0; */
-}
 
 
 @layer components {
